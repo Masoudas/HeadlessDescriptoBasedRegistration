@@ -2,8 +2,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/Fiji_Plugins/3.1.1/Fiji_Plugins-3.1.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/SPIM_Registration/5.0.20/SPIM_Registration-5.0.20.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/bigdataviewer-core/5.1.0/bigdataviewer-core-5.1.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-cache/1.0.0-beta-11/imglib2-cache-1.0.0-beta-11.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/ben-manes/caffeine/caffeine/2.4.0/caffeine-2.4.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-ui/2.0.0/imglib2-ui-2.0.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/cisd/jhdf5/14.12.6/jhdf5-14.12.6.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" enabled="true" runInBatchMode="false"/>
@@ -12,9 +10,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/ui-behaviour/1.7.4/ui-behaviour-1.7.4.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/yaml/snakeyaml/1.23/snakeyaml-1.23.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/spim_data/2.2.2/spim_data-2.2.2.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/scijava-common/2.77.0/scijava-common-2.77.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/parsington/1.0.4/parsington-1.0.4.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/bushe/eventbus/1.4/eventbus-1.4.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/SPIM_Opener/2.0.2/SPIM_Opener-2.0.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/VIB-lib/2.2.0/VIB-lib-2.2.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/sc/fiji/pal-optimization/2.0.1/pal-optimization-2.0.1.jar" enabled="true" runInBatchMode="false"/>
@@ -25,9 +20,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-algorithm-gpl/0.2.3/imglib2-algorithm-gpl-0.2.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-algorithm-fft/0.2.0/imglib2-algorithm-fft-0.2.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-ij/2.0.0-beta-44/imglib2-ij-2.0.0-beta-44.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/net/imagej/imagej-common/0.28.2/imagej-common-0.28.2.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/scijava-table/0.4.0/scijava-table-0.4.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/edu/ucar/udunits/4.3.18/udunits-4.3.18.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-realtransform/2.2.1/imglib2-realtransform-2.2.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/jitk/jitk-tps/3.0.1/jitk-tps-3.0.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/googlecode/efficient-java-matrix-library/ejml/0.24/ejml-0.24.jar" enabled="true" runInBatchMode="false"/>
@@ -91,4 +83,14 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/vecmath/1.6.0-scijava-2/vecmath-1.6.0-scijava-2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/net/imagej/ij/1.52o/ij-1.52o.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/mpicbg/mpicbg/1.2.0/mpicbg-1.2.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/scif/scifio/0.37.3/scifio-0.37.3.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/io/scif/scifio-jai-imageio/1.1.1/scifio-jai-imageio-1.1.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/imagej/imagej-common/0.28.2/imagej-common-0.28.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/scijava-table/0.4.0/scijava-table-0.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/edu/ucar/udunits/4.3.18/udunits-4.3.18.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/imglib2/imglib2-cache/1.0.0-beta-11/imglib2-cache-1.0.0-beta-11.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/github/ben-manes/caffeine/caffeine/2.4.0/caffeine-2.4.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/scijava-common/2.77.0/scijava-common-2.77.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/scijava/parsington/1.0.4/parsington-1.0.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/bushe/eventbus/1.4/eventbus-1.4.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -57,31 +57,43 @@
 		<contributor>
 			<name>Johannes Schindelin</name>
 			<url>https://imagej.net/User:Schindelin</url>
-			<properties><id>dscho</id></properties>
+			<properties>
+				<id>dscho</id>
+			</properties>
 		</contributor>
 		<contributor>
 			<name>Nathan Clack</name>
-			<properties><id>nclack</id></properties>
+			<properties>
+				<id>nclack</id>
+			</properties>
 		</contributor>
 		<contributor>
 			<name>Jan Eglinger</name>
 			<url>https://imagej.net/User:Eglinger</url>
-			<properties><id>imagejan</id></properties>
+			<properties>
+				<id>imagejan</id>
+			</properties>
 		</contributor>
 		<contributor>
 			<name>Mark Hiner</name>
 			<url>https://imagej.net/User:Hinerm</url>
-			<properties><id>hinerm</id></properties>
+			<properties>
+				<id>hinerm</id>
+			</properties>
 		</contributor>
 		<contributor>
 			<name>Stephan Saalfeld</name>
 			<url>https://imagej.net/User:Saalfeld</url>
-			<properties><id>axtimwalde</id></properties>
+			<properties>
+				<id>axtimwalde</id>
+			</properties>
 		</contributor>
 		<contributor>
 			<name>Jean-Yves Tinevez</name>
 			<url>https://imagej.net/User:JeanYvesTinevez</url>
-			<properties><id>tinevez</id></properties>
+			<properties>
+				<id>tinevez</id>
+			</properties>
 		</contributor>
 	</contributors>
 
@@ -145,7 +157,7 @@
 			<artifactId>legacy-imglib1</artifactId>
 		</dependency>
 
-			<!-- ImageJ dependencies -->
+		<!-- ImageJ dependencies -->
 		<dependency>
 			<groupId>net.imagej</groupId>
 			<artifactId>ij</artifactId>
@@ -155,6 +167,22 @@
 		<dependency>
 			<groupId>mpicbg</groupId>
 			<artifactId>mpicbg</artifactId>
+		</dependency>
+
+		<!-- Added by Masoud -->
+		<!-- SCFIO dependency -->
+		<dependency>
+			<groupId>io.scif</groupId>
+			<artifactId>scifio</artifactId>
+			<!-- <version>0.38.3-SNAPSHOT</version> -->
+		</dependency>
+		
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.6.0</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
