@@ -139,7 +139,7 @@ public class Matching {
 
 		result_2D.setRegistrationError(model1.getCost());
 		result_2D.setIsSuccessful(true);
-		result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates);
+		result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates * 100);
 		result_2D.setAffineTransfrom((AffineModel2D) model1);
 		result_2D.setResultingCompositeImage(compositeImage);
 		return result_2D;

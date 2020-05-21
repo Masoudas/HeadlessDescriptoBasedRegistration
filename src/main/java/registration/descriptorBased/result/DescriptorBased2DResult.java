@@ -4,17 +4,16 @@ import ij.ImagePlus;
 import mpicbg.models.AffineModel2D;
 
 public class DescriptorBased2DResult {
-    public enum FailureCause{
-        NOT_ENOUGH_FP,
-        NO_INLIER_AFTER_RANSAC,
+    public enum FailureCause {
+        NOT_ENOUGH_FP, NO_INLIER_AFTER_RANSAC,
     }
 
-    private boolean _isSuccessful;
-    private FailureCause _description;
-    private double _percentInliers;
+    private boolean _isSuccessful = false;
+    private FailureCause _description = null;
+    private double _percentInliers = 0;
     private double[][] _affineTransform = new double[2][3];
-    private ImagePlus _compositeImage;
-    private double _error;
+    private ImagePlus _compositeImage = null;
+    private double _error = 0;
 
     public void setIsSuccessful(boolean isSuccessful) {
         this._isSuccessful = isSuccessful;
