@@ -1,4 +1,4 @@
-package process;
+package registration.descriptorBased.process;
 
 import fiji.stacks.Hyperstack_rearranger;
 import ij.CompositeImage;

@@ -1,4 +1,4 @@
-package process;
+package registration.descriptorBased.process;
 
 import net.imglib2.Cursor;
 import net.imglib2.IterableInterval;

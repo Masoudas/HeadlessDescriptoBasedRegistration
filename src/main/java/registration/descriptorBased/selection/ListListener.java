@@ -1,4 +1,4 @@
-package selection;
+package registration.descriptorBased.selection;
 
 import java.awt.List;
 import java.awt.event.ItemEvent;

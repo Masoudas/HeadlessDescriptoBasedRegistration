@@ -1,4 +1,4 @@
-package plugin;
+package registration.descriptorBased.plugin;
 
 import java.util.ArrayList;
 

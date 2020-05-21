@@ -1,4 +1,4 @@
-package selection;
+package registration.descriptorBased.selection;
 
 import mpicbg.models.Point;
 

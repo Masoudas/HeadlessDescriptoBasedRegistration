@@ -1,4 +1,4 @@
-package process;
+package registration.descriptorBased.process;
 
 import ij.IJ;
 

@@ -1,4 +1,4 @@
-package selection;
+package registration.descriptorBased.selection;
 
 import fiji.tool.AbstractTrackingTool;
 import fiji.tool.ToolToggleListener;

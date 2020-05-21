@@ -1,4 +1,4 @@
-package plugin;
+package registration.descriptorBased.headless;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -6,13 +6,13 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
-import headless.HeadLess_Descriptor_based_registration;
 import ij.ImagePlus;
 import io.scif.img.ImgOpener;
 import mpicbg.models.AffineModel2D;
 import net.imglib2.img.display.imagej.ImageJFunctions;
 import net.imglib2.type.numeric.integer.UnsignedShortType;
-import result.DescriptorBased2DResult;
+import registration.descriptorBased.plugin.DescriptorParameters;
+import registration.descriptorBased.result.DescriptorBased2DResult;
 
 public class HeadLess_Descriptor_based_registration_Test {
         private static String root = HeadLess_Descriptor_based_registration_Test.class.getResource("").getPath();

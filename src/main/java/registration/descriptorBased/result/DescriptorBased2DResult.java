@@ -1,4 +1,4 @@
-package result;
+package registration.descriptorBased.result;
 
 import ij.ImagePlus;
 import mpicbg.models.AffineModel2D;

@@ -1,4 +1,4 @@
-package process;
+package registration.descriptorBased.process;
 
 import net.imglib2.util.Util;
 import fiji.util.node.Leaf;

@@ -1,4 +1,4 @@
-package process;
+package registration.descriptorBased.process;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -59,8 +59,9 @@ import mpicbg.pointdescriptor.similarity.SquareDistance;
 import mpicbg.spim.registration.ViewDataBeads;
 import mpicbg.spim.registration.ViewStructure;
 import net.imglib2.util.Util;
-import plugin.DescriptorParameters;
-import result.DescriptorBased2DResult;
+import registration.descriptorBased.plugin.DescriptorParameters;
+import registration.descriptorBased.result.DescriptorBased2DResult;
+
 
 public class Matching {
 	public static boolean applyScaling = false;
