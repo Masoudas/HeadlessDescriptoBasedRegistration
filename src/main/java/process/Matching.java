@@ -109,7 +109,7 @@ public class Matching {
 		final int minNumPeaks = params.numNeighbors + params.redundancy + 1;
 		if (peaks1.size() < minNumPeaks || peaks2.size() < minNumPeaks) {
 			result_2D.setIsSuccessful(false);
-			result_2D.setDescription("Not enough feature points were detected");
+			result_2D.setFailureDescription(DescriptorBased2DResult.FailureCause.NOT_ENOUGH_FP);
 			return result_2D;
 		}
 
@@ -123,7 +123,7 @@ public class Matching {
 		// nothing found
 		if (model1 == null || model2 == null) {
 			result_2D.setIsSuccessful(false);
-			result_2D.setDescription("No affine model was found after Ransac.");
+			result_2D.setFailureDescription(DescriptorBased2DResult.FailureCause.NO_INLIER_AFTER_RANSAC);
 			return result_2D;
 		}
 
@@ -141,7 +141,6 @@ public class Matching {
 
 		result_2D.setRegistrationError(model1.getCost());
 		result_2D.setIsSuccessful(true);
-		result_2D.setDescription("Successful");
 		result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates);
 		result_2D.setAffineTransfrom((AffineModel2D) model1);
 		result_2D.setResultingCompositeImage(compositeImage);
