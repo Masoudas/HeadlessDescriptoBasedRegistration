@@ -1,15 +1,13 @@
 package plugin;
 
-import ij.gui.Roi;
-
 import java.util.ArrayList;
 
+import ij.gui.Roi;
 import mpicbg.models.AbstractModel;
+import mpicbg.models.AffineModel2D;
 import mpicbg.models.InvertibleBoundable;
 import mpicbg.models.PointMatch;
-import mpicbg.models.TranslationModel2D;
 import mpicbg.models.TranslationModel3D;
-import mpicbg.models.AffineModel2D;
 
 public class DescriptorParameters {
 	/**
@@ -78,7 +76,8 @@ public class DescriptorParameters {
 	public int localization = 1; // localizationChoice = { "None", "3-dimensional quadratic fit", "Gaussian mask
 									// localization fit" };
 	public boolean lookForMaxima, lookForMinima;
-	public AbstractModel<?> model;
+	// (Masoud: Add AffineModel2D as the desired model).
+	public AbstractModel<?> model = new AffineModel2D();
 	public boolean similarOrientation;
 
 	// (Masoud: The sum of these two parameteres determine how many feature points
@@ -121,10 +120,10 @@ public class DescriptorParameters {
 		else if (this.dimensionality == 2)
 			// Masoud: Start with a 2D affine model;
 			return new AffineModel2D();
-			// return new TranslationModel2D();
+		// return new TranslationModel2D();
 		else
 			return new TranslationModel3D();
-		
+
 	}
 
 	// for java-based calling
