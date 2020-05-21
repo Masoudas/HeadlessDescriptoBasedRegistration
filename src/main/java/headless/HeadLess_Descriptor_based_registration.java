@@ -1,6 +1,7 @@
-package plugin;
+package headless;
 
 import ij.ImagePlus;
+import plugin.DescriptorParameters;
 import process.Matching;
 import result.DescriptorBased2DResult;
 

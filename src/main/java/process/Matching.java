@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import net.imglib2.util.Util;
 import fiji.util.KDTree;
 import fiji.util.NNearestNeighborSearch;
 import ij.CompositeImage;
@@ -35,7 +34,6 @@ import mpicbg.imglib.outofbounds.OutOfBoundsStrategyMirrorFactory;
 import mpicbg.imglib.type.numeric.integer.UnsignedByteType;
 import mpicbg.imglib.type.numeric.integer.UnsignedShortType;
 import mpicbg.imglib.type.numeric.real.FloatType;
-import mpicbg.models.AbstractAffineModel3D;
 import mpicbg.models.AffineModel2D;
 import mpicbg.models.InterpolatedAffineModel2D;
 import mpicbg.models.InterpolatedAffineModel3D;
@@ -60,9 +58,8 @@ import mpicbg.pointdescriptor.similarity.SimilarityMeasure;
 import mpicbg.pointdescriptor.similarity.SquareDistance;
 import mpicbg.spim.registration.ViewDataBeads;
 import mpicbg.spim.registration.ViewStructure;
-import mpicbg.spim.registration.bead.BeadRegistration;
+import net.imglib2.util.Util;
 import plugin.DescriptorParameters;
-import plugin.Descriptor_based_registration;
 import result.DescriptorBased2DResult;
 
 public class Matching {

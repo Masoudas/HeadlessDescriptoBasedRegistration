@@ -6,6 +6,7 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
+import headless.HeadLess_Descriptor_based_registration;
 import ij.ImagePlus;
 import io.scif.img.ImgOpener;
 import mpicbg.models.AffineModel2D;
