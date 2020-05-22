@@ -1,4 +1,4 @@
-package registration.descriptorBased.plugin;
+package registration.descriptorBased.process;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import mpicbg.models.PointMatch;
 import mpicbg.models.TranslationModel3D;
 import registration.descriptorBased.headless.RegistrationParams;
 
-public class DescriptorParameters {
+class DescriptorParameters {
 	/**
 	 * How many iterations for a RANSAC
 	 */

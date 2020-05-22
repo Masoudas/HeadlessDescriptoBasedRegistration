@@ -1,7 +1,6 @@
 package registration.descriptorBased.headless;
 
 import ij.ImagePlus;
-import registration.descriptorBased.plugin.DescriptorParameters;
 import registration.descriptorBased.process.Matching;
 import registration.descriptorBased.result.DescriptorBased2DResult;
 
@@ -21,9 +20,8 @@ public class HeadLess_Descriptor_based_registration {
 		this._checkImage(imageToRegister);
 		this._checkImage(baseImage);
 
-		DescriptorParameters descriptorParameters = DescriptorParameters.Build(registrationParams);
 		// compute the actual matching
-		return Matching.descriptorBasedRegistration(imageToRegister, baseImage, descriptorParameters);
+		return Matching.descriptorBasedRegistration(imageToRegister, baseImage, registrationParams);
 	}
 
 	private void _checkImage(ImagePlus img) {

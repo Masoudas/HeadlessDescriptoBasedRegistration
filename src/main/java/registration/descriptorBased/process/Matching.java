@@ -59,9 +59,8 @@ import mpicbg.pointdescriptor.similarity.SquareDistance;
 import mpicbg.spim.registration.ViewDataBeads;
 import mpicbg.spim.registration.ViewStructure;
 import net.imglib2.util.Util;
-import registration.descriptorBased.plugin.DescriptorParameters;
+import registration.descriptorBased.headless.RegistrationParams;
 import registration.descriptorBased.result.DescriptorBased2DResult;
-
 
 public class Matching {
 	public static boolean applyScaling = false;
@@ -79,7 +78,8 @@ public class Matching {
 	 * @return - the number of inliers
 	 */
 	public static DescriptorBased2DResult descriptorBasedRegistration(final ImagePlus imp1, final ImagePlus imp2,
-			final DescriptorParameters params) {
+			final RegistrationParams registParams) {
+		DescriptorParameters params = DescriptorParameters.Build(registParams);
 		DescriptorBased2DResult result_2D = new DescriptorBased2DResult();
 		int numInliers = 0;
 
