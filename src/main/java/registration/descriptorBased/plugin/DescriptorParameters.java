@@ -8,6 +8,7 @@ import mpicbg.models.AffineModel2D;
 import mpicbg.models.InvertibleBoundable;
 import mpicbg.models.PointMatch;
 import mpicbg.models.TranslationModel3D;
+import registration.descriptorBased.headless.RegistrationParams;
 
 public class DescriptorParameters {
 	/**
@@ -138,4 +139,27 @@ public class DescriptorParameters {
 	public double[] sigma;
 	public int[] region;
 	public int iterations;
+
+	public static DescriptorParameters Build(RegistrationParams registrationParams) {
+		DescriptorParameters params = new DescriptorParameters();
+		params.channel1 = 0;
+		params.channel2 = 0;
+		params.globalOpt = 0;
+		params.numNeighbors = registrationParams.getNumNeighbors();
+		params.range = 0;
+		params.ransacThreshold = registrationParams.getRansacThreshold();
+		params.redundancy = registrationParams.getRedundancy();
+		params.regularize = false;
+		params.setPointsRois = false;
+		params.storeModels = false;
+		params.dimensionality = 2;
+		params.lookForMaxima = true;
+		params.lookForMinima = false;
+		params.sigma1 = registrationParams.getSigma1();
+		params.sigma2 = registrationParams.getSigma2();
+		params.threshold = registrationParams.getThreshold();
+		params.model = new AffineModel2D();
+
+		return params;
+	}
 }

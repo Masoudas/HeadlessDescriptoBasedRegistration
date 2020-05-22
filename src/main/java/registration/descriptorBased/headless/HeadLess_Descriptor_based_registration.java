@@ -17,12 +17,13 @@ public class HeadLess_Descriptor_based_registration {
 	 * @param imageToRegister the image to be registered to the base image.
 	 * @param params          is the descriptor based registration params.
 	 */
-	public DescriptorBased2DResult register(ImagePlus imageToRegister, ImagePlus baseImage, DescriptorParameters registrationParams) {
+	public DescriptorBased2DResult register(ImagePlus imageToRegister, ImagePlus baseImage, RegistrationParams registrationParams) {
 		this._checkImage(imageToRegister);
 		this._checkImage(baseImage);
 
+		DescriptorParameters descriptorParameters = DescriptorParameters.Build(registrationParams);
 		// compute the actual matching
-		return Matching.descriptorBasedRegistration(imageToRegister, baseImage, registrationParams);
+		return Matching.descriptorBasedRegistration(imageToRegister, baseImage, descriptorParameters);
 	}
 
 	private void _checkImage(ImagePlus img) {
