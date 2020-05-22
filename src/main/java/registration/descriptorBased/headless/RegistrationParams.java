@@ -13,6 +13,26 @@ public class RegistrationParams {
     private int redundancy = 1;
     private int thresholdRansac = 5;
 
+    /**
+     * Default values are sigma1 = 2.23, sigma2 = 2.65, threshold = 0.03,
+     * numNeighbors = 3, redundancy = 1, thresholdRansac = 5.
+     */
+    public RegistrationParams() {
+
+    }
+
+    /**
+     * Copy constructor.
+     */
+    public RegistrationParams(RegistrationParams params) {
+        sigma1 = params.getSigma1();
+        sigma2 = params.getSigma2();
+        threshold = params.getThreshold();
+        numNeighbors = params.getNumNeighbors();
+        redundancy = params.getRedundancy();
+        thresholdRansac = params.getRansacThreshold();
+    }
+
     public RegistrationParams sigma1(double sigma1) {
         this.sigma1 = sigma1;
         return this;
