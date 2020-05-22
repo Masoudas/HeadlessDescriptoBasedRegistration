@@ -59,6 +59,7 @@ public class HeadLess_Descriptor_based_registration_Test {
         System.out.println(result.percentInliers());
         System.out.println(result.error());
         assertTrue(result.isSuccessful() == true);
+        
     }
 
 }

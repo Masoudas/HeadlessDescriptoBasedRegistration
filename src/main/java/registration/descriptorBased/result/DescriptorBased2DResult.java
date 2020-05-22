@@ -12,7 +12,6 @@ public class DescriptorBased2DResult {
     private FailureCause _description = null;
     private double _percentInliers = 0;
     private double[][] _affineTransform = new double[2][3];
-    private ImagePlus _compositeImage = null;
     private double _error = 0;
 
     public void setIsSuccessful(boolean isSuccessful) {
@@ -27,10 +26,6 @@ public class DescriptorBased2DResult {
         this._percentInliers = percentInliers;
     }
 
-    public void setResultingCompositeImage(ImagePlus compositeImage) {
-        this._compositeImage = compositeImage;
-    }
-
     public void setAffineTransfrom(AffineModel2D affineModel2D) {
         affineModel2D.toMatrix(_affineTransform);
     }
@@ -41,10 +36,6 @@ public class DescriptorBased2DResult {
 
     public double[][] affineTransform() {
         return _affineTransform;
-    }
-
-    public ImagePlus compositeImage() {
-        return _compositeImage;
     }
 
     public FailureCause description() {
