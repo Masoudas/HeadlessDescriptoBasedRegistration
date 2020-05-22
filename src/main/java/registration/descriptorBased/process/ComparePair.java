@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import mpicbg.models.Model;
 import mpicbg.models.PointMatch;
 
-public class ComparePair 
+class ComparePair 
 {
 	final public int indexA, indexB;
 	public Model<?> model;

@@ -213,7 +213,7 @@ public class Matching {
 		return numMatches;
 	}
 
-	public static Vector<ComparePair> descriptorMatching(
+	static Vector<ComparePair> descriptorMatching(
 			final ArrayList<ArrayList<DifferenceOfGaussianPeak<FloatType>>> peaks, final int numImages,
 			final DescriptorParameters params, final float zStretching) {
 		// get all compare pairs
@@ -263,7 +263,7 @@ public class Matching {
 		return pairs;
 	}
 
-	public static ArrayList<InvertibleBoundable> globalOptimization(final Vector<ComparePair> pairs,
+	static ArrayList<InvertibleBoundable> globalOptimization(final Vector<ComparePair> pairs,
 			final int numImages, final DescriptorParameters params) {
 		// perform global optimization
 		final ArrayList<Tile<?>> tiles = new ArrayList<Tile<?>>();
@@ -374,7 +374,7 @@ public class Matching {
 		return models;
 	}
 
-	public synchronized static void addPointMatches(final ArrayList<PointMatch> correspondences, final Tile<?> tileA,
+	synchronized static void addPointMatches(final ArrayList<PointMatch> correspondences, final Tile<?> tileA,
 			final Tile<?> tileB) {
 		if (correspondences.size() > 0) {
 			tileA.addMatches(correspondences);
@@ -611,7 +611,7 @@ public class Matching {
 		}
 	}
 
-	public static float[] computeMinMax(final ImagePlus imp, final int channel) {
+	static float[] computeMinMax(final ImagePlus imp, final int channel) {
 		final int size = imp.getWidth() * imp.getHeight();
 		float min = Float.MAX_VALUE;
 		float max = -Float.MAX_VALUE;
@@ -633,7 +633,7 @@ public class Matching {
 		return new float[] { min, max };
 	}
 
-	public static ArrayList<DifferenceOfGaussianPeak<FloatType>> extractCandidates(final ImagePlus imp,
+	static ArrayList<DifferenceOfGaussianPeak<FloatType>> extractCandidates(final ImagePlus imp,
 			final int channel, final int timepoint, final DescriptorParameters params, final float[] minmax) {
 		// get the input images for registration
 		final Image<FloatType> img = convertToFloat(imp, channel, timepoint, minmax);
@@ -680,7 +680,7 @@ public class Matching {
 		return peaks;
 	}
 
-	public static class PeakSort implements Comparable<PeakSort> {
+	static class PeakSort implements Comparable<PeakSort> {
 		final DifferenceOfGaussianPeak<FloatType> peak;
 
 		public PeakSort(final DifferenceOfGaussianPeak<FloatType> peak) {
@@ -708,7 +708,7 @@ public class Matching {
 	 * @param imp - the {@link ImagePlus} input image
 	 * @return - the normalized copy [0...1]
 	 */
-	public static Image<FloatType> convertToFloat(final ImagePlus imp, int channel, int timepoint,
+	static Image<FloatType> convertToFloat(final ImagePlus imp, int channel, int timepoint,
 			final float[] minmax) {
 		// stupid 1-offset of imagej
 		channel++;
@@ -1143,7 +1143,7 @@ public class Matching {
 		return new int[] { min, max };
 	}
 
-	public static ArrayList<InvertibleBoundable> descriptorBasedStackRegistration(final ImagePlus imp,
+	static ArrayList<InvertibleBoundable> descriptorBasedStackRegistration(final ImagePlus imp,
 			final DescriptorParameters params) {
 		return null;
 	}

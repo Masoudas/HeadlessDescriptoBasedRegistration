@@ -8,7 +8,7 @@ import net.imglib2.img.array.ArrayImgFactory;
 import net.imglib2.type.numeric.real.FloatType;
 import net.imglib2.view.Views;
 
-public class GaussianMaskFit 
+class GaussianMaskFit 
 {
 	public static void gaussianMaskFit(
 			final RandomAccessibleInterval<FloatType> signalInterval,

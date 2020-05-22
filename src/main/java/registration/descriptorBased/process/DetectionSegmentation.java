@@ -18,7 +18,7 @@ import net.imglib2.RandomAccessible;
 import net.imglib2.view.Views;
 import spim.Threads;
 
-public class DetectionSegmentation
+class DetectionSegmentation
 {
 	public static double distanceThreshold = 1.5;
 

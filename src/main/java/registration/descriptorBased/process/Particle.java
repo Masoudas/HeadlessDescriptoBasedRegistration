@@ -6,7 +6,7 @@ import mpicbg.imglib.algorithm.scalespace.DifferenceOfGaussianPeak;
 import mpicbg.imglib.type.numeric.real.FloatType;
 import mpicbg.models.Point;
 
-public class Particle extends Point implements Leaf<Particle>
+class Particle extends Point implements Leaf<Particle>
 {
 	private static final long serialVersionUID = 1L;
 

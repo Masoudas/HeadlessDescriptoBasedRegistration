@@ -35,7 +35,7 @@ import mpicbg.models.InvertibleBoundable;
 import mpicbg.models.InvertibleCoordinateTransform;
 import mpicbg.models.NoninvertibleModelException;
 
-public class OverlayFusion 
+class OverlayFusion 
 {
 	public static boolean useSizeOfFirstImage = false;
 	public static boolean useNearestNeighborInterpolation = false;
