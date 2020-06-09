@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.MatrixUtils;
+import org.apache.commons.math3.linear.SingularMatrixException;
+
 import fiji.util.KDTree;
 import fiji.util.NNearestNeighborSearch;
 import ij.CompositeImage;
@@ -135,12 +139,13 @@ public class Matching {
 
 		_putDotsOnDetectedFeaturePoints(imp1, imp2, params, finalInliers);
 
-		// CompositeImage compositeImage = _generateCompositeImage(imp1, imp2, params, model1, model2);
-
+		// CompositeImage compositeImage = _generateCompositeImage(imp1, imp2, params,
+		// model1, model2);
+		result_2D.setIsSuccessful(_isRegistrationMatrixInvertible((AffineModel2D) model1));		
 		result_2D.setRegistrationError(model1.getCost());
-		result_2D.setIsSuccessful(true);
 		result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates * 100);
 		result_2D.setAffineTransfrom((AffineModel2D) model1);
+
 		// result_2D.setResultingCompositeImage(compositeImage);
 		return result_2D;
 	}
@@ -150,6 +155,26 @@ public class Matching {
 		// set point rois if 2d and wanted
 		if (params.setPointsRois)
 			setPointRois(imp1, imp2, finalInliers);
+	}
+
+	private static boolean _isRegistrationMatrixInvertible(AffineModel2D mat) {
+		double[][] matAsDouble = new double[2][3];
+		mat.toMatrix(matAsDouble);
+
+		double[][] rotation = new double[2][2];
+		rotation[0][0] = matAsDouble[0][0];
+		rotation[0][1] = matAsDouble[0][1];
+		rotation[1][0] = matAsDouble[1][0];
+		rotation[1][1] = matAsDouble[1][1];
+
+		Array2DRowRealMatrix matrix = new Array2DRowRealMatrix(rotation);
+
+		try {
+			MatrixUtils.inverse(matrix);
+			return true;
+		} catch (SingularMatrixException e) {
+			return false;
+		}
 	}
 
 	private static CompositeImage _generateCompositeImage(final ImagePlus imp1, final ImagePlus imp2,
@@ -213,9 +238,8 @@ public class Matching {
 		return numMatches;
 	}
 
-	static Vector<ComparePair> descriptorMatching(
-			final ArrayList<ArrayList<DifferenceOfGaussianPeak<FloatType>>> peaks, final int numImages,
-			final DescriptorParameters params, final float zStretching) {
+	static Vector<ComparePair> descriptorMatching(final ArrayList<ArrayList<DifferenceOfGaussianPeak<FloatType>>> peaks,
+			final int numImages, final DescriptorParameters params, final float zStretching) {
 		// get all compare pairs
 		final Vector<ComparePair> pairs = getComparePairs(params, numImages);
 
@@ -263,8 +287,8 @@ public class Matching {
 		return pairs;
 	}
 
-	static ArrayList<InvertibleBoundable> globalOptimization(final Vector<ComparePair> pairs,
-			final int numImages, final DescriptorParameters params) {
+	static ArrayList<InvertibleBoundable> globalOptimization(final Vector<ComparePair> pairs, final int numImages,
+			final DescriptorParameters params) {
 		// perform global optimization
 		final ArrayList<Tile<?>> tiles = new ArrayList<Tile<?>>();
 		for (int t = 0; t < numImages; ++t)
@@ -633,8 +657,8 @@ public class Matching {
 		return new float[] { min, max };
 	}
 
-	static ArrayList<DifferenceOfGaussianPeak<FloatType>> extractCandidates(final ImagePlus imp,
-			final int channel, final int timepoint, final DescriptorParameters params, final float[] minmax) {
+	static ArrayList<DifferenceOfGaussianPeak<FloatType>> extractCandidates(final ImagePlus imp, final int channel,
+			final int timepoint, final DescriptorParameters params, final float[] minmax) {
 		// get the input images for registration
 		final Image<FloatType> img = convertToFloat(imp, channel, timepoint, minmax);
 
@@ -708,8 +732,7 @@ public class Matching {
 	 * @param imp - the {@link ImagePlus} input image
 	 * @return - the normalized copy [0...1]
 	 */
-	static Image<FloatType> convertToFloat(final ImagePlus imp, int channel, int timepoint,
-			final float[] minmax) {
+	static Image<FloatType> convertToFloat(final ImagePlus imp, int channel, int timepoint, final float[] minmax) {
 		// stupid 1-offset of imagej
 		channel++;
 		timepoint++;

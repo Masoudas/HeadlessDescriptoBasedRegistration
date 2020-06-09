@@ -86,5 +86,4 @@ public class RegistrationParams {
     public int getRansacThreshold() {
         return this.thresholdRansac;
     }
-
 }
