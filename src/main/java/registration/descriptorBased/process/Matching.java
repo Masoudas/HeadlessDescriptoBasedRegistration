@@ -139,13 +139,22 @@ public class Matching {
 
 		_putDotsOnDetectedFeaturePoints(imp1, imp2, params, finalInliers);
 
+		if (!_isRegistrationMatrixInvertible((AffineModel2D) model1)) {
+			result_2D.setIsSuccessful(false);
+			result_2D.setRegistrationError(-1);
+			result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates * 100);
+			result_2D.setAffineTransfrom((AffineModel2D) model1);
+			result_2D.setFailureDescription(DescriptorBased2DResult.FailureCause.NO_INVERTIBLE_TRANSFORMATION);
+		} else {
+			result_2D.setIsSuccessful(true);
+			result_2D.setRegistrationError(model1.getCost());
+			result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates * 100);
+			result_2D.setAffineTransfrom((AffineModel2D) model1);
+
+		}
+
 		// CompositeImage compositeImage = _generateCompositeImage(imp1, imp2, params,
 		// model1, model2);
-		result_2D.setIsSuccessful(_isRegistrationMatrixInvertible((AffineModel2D) model1));		
-		result_2D.setRegistrationError(model1.getCost());
-		result_2D.setPercentInliers((double) inliers_afterRansac / ransac_candidates * 100);
-		result_2D.setAffineTransfrom((AffineModel2D) model1);
-
 		// result_2D.setResultingCompositeImage(compositeImage);
 		return result_2D;
 	}

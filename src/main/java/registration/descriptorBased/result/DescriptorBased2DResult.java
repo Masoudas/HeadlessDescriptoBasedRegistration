@@ -5,7 +5,7 @@ import mpicbg.models.AffineModel2D;
 
 public class DescriptorBased2DResult {
     public enum FailureCause {
-        NOT_ENOUGH_FP, NO_INLIER_AFTER_RANSAC,
+        NOT_ENOUGH_FP, NO_INLIER_AFTER_RANSAC, NO_INVERTIBLE_TRANSFORMATION
     }
 
     private boolean _isSuccessful = false;
