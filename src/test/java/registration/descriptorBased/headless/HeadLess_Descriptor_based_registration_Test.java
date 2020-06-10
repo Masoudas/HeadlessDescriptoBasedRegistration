@@ -11,6 +11,7 @@ import io.scif.img.ImgOpener;
 import net.imglib2.img.display.imagej.ImageJFunctions;
 import net.imglib2.type.numeric.integer.UnsignedShortType;
 import registration.descriptorBased.result.DescriptorBased2DResult;
+import registration.descriptorBased.result.DescriptorBased2DResult.FailureCause;
 
 public class HeadLess_Descriptor_based_registration_Test {
     private static String root = HeadLess_Descriptor_based_registration_Test.class.getResource("").getPath();
@@ -100,6 +101,7 @@ public class HeadLess_Descriptor_based_registration_Test {
         DescriptorBased2DResult result = new HeadLess_Descriptor_based_registration().register(toRegisterImage,
                 baseImage, params);
         assertTrue(result.isSuccessful() == false);
+        assertTrue(result.description() == FailureCause.NO_INVERTIBLE_TRANSFORMATION);
         
     }
 
