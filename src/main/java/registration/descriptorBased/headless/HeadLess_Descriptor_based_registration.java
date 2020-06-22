@@ -1,9 +1,10 @@
 package registration.descriptorBased.headless;
 
 import ij.ImagePlus;
+import mpicbg.pointdescriptor.exception.NoSuitablePointsException;
 import registration.descriptorBased.process.Matching;
 import registration.descriptorBased.result.DescriptorBased2DResult;
-
+import registration.descriptorBased.result.DescriptorBased2DResult.FailureCause;
 
 public class HeadLess_Descriptor_based_registration {
 	/**
@@ -16,12 +17,24 @@ public class HeadLess_Descriptor_based_registration {
 	 * @param imageToRegister the image to be registered to the base image.
 	 * @param params          is the descriptor based registration params.
 	 */
-	public DescriptorBased2DResult register(ImagePlus imageToRegister, ImagePlus baseImage, RegistrationParams registrationParams) {
+	public DescriptorBased2DResult register(ImagePlus imageToRegister, ImagePlus baseImage,
+			RegistrationParams registrationParams) {
 		this._checkImage(imageToRegister);
 		this._checkImage(baseImage);
 
 		// compute the actual matching
-		return Matching.descriptorBasedRegistration(imageToRegister, baseImage, registrationParams);
+		try {
+			return Matching.descriptorBasedRegistration(imageToRegister, baseImage, registrationParams);
+		} catch (Exception e) {
+			DescriptorBased2DResult result = new DescriptorBased2DResult();
+			result.setIsSuccessful(false);
+
+			if (e instanceof NoSuitablePointsException) {
+				result.setFailureDescription(FailureCause.NOT_ENOUGH_FP);
+			}
+			result.setRegistrationError(-1);
+			return result;
+		}
 	}
 
 	private void _checkImage(ImagePlus img) {
@@ -31,6 +44,5 @@ public class HeadLess_Descriptor_based_registration {
 		}
 
 	}
-
 
 }
