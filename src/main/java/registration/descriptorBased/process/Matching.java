@@ -1093,7 +1093,6 @@ public class Matching {
 			try {
 				descriptors.add(new SimplePointDescriptor<Particle>(p, neighbors, similarityMeasure, matcher));
 			} catch (NoSuitablePointsException e) {
-				e.printStackTrace();
 			}
 		}
 
@@ -1128,7 +1127,6 @@ public class Matching {
 			try {
 				descriptors.add(new ModelPointDescriptor<Particle>(p, neighbors, model, similarityMeasure, matcher));
 			} catch (NoSuitablePointsException e) {
-				e.printStackTrace();
 			}
 		}
 
